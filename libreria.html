@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <title>Registrar libro</title>
+        <link rel="stylesheet"  href="libreriaForm.css">
+    </head>
+
+    <body>
+        
+                <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Libreria</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Inicio</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div>
+            <form class="formulario-libro" action="/libro/registro" method="POST" enctype="multipart/form-data">
+
+                <fieldset enabled>
+                    <legend>Registro de libros</legend>
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Ingrese el ISBN </label>
+                        <input type="text" name="isbn" id="disabledTextInput" class="form-control" placeholder="ISBN" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Ingrese el titulo del libro</label>
+                        <input type="text" name="titulo" id="disabledTextInput" class="form-control" placeholder="Titulo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Ingrese la cantidad de ejemplares</label>
+                        <input type="number" name="ejemplares" id="disabledTextInput" class="form-control" placeholder="Nº ejemplares" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Ingrese el año de registro</label>
+                        <input type="number" name="anio" id="disabledTextInput" class="form-control" placeholder="anio" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Ingrese el valor por unidad</label>
+                        <input type="number" name="valor" id="disabledTextInput" class="form-control" placeholder="0.00$" required>
+                    </div>
+
+
+
+                    <div>
+                        <select class="form-select" name="idEditorial" aria-label="Default select example">
+                            <option selected>Seleccionar editoriales</option>
+                            <option th:each="editorial : ${editoriales}"
+                                    th:value="${editorial.id}"
+                                    th:text="${editorial.nombre}">editorial1
+                                </option>
+                                <option th:each="editorial : ${editoriales}"
+                                    th:value="${editorial.id}"
+                                    th:text="${editorial.nombre}">editorial1
+                                </option>
+                                <option th:each="editorial : ${editoriales}"
+                                    th:value="${editorial.id}"
+                                    th:text="${editorial.nombre}">editorial1
+                                </option>
+                        </select>
+                    </div>
+                    <p></p>
+                    <div>
+                        <select class="form-select" name="idAutor" aria-label="Default select example">
+                            <option selected>Seleccionar autores</option>
+                            <option th:each="autor : ${autores}"
+                                    th:value="${autor.id}"
+                                    th:text="${autor.nombre}">autor1
+                            </option>
+                            <option th:each="autor : ${autores}"
+                            th:value="${autor.id}"
+                            th:text="${autor.nombre}">autor1
+                    </option>
+                    <option th:each="autor : ${autores}"
+                    th:value="${autor.id}"
+                    th:text="${autor.nombre}">autor1
+            </option>
+
+                        </select>
+                    </div>
+                    <p></p>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+
+
+
+
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+.formulario-libro{
+
+    width: 1000px;
+    padding: 100px;
+    padding-left: 100px;
+    padding-bottom: 900px;
+    padding-right: 100px;
+    margin: auto;
+    margin-bottom: 0px;
+
+
+    border-radius: 5px;
+    border-left: 2px;
+    border-color: rgb(253, 253, 253);
+    border: 50px;
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+
+
+.btnbtn-primary{
+
+    background-color:  rgb(228, 219, 98) ;
+}
+
+body{
+    background-color:#f5f5f5  ;
+}
+
+.formulario-libro{
+     width: 1000px;
+    padding: 100px;
+    padding-left: 100px;
+    padding-bottom: 100pxpx;
+    padding-right: 100px;
+    margin: auto;
+    margin-bottom: 0px;
+
+
+    border-radius: 5px;
+    border-left: 2px;
+    border-color: rgb(253, 253, 253);
+    border: 50px;
+    background-color: rgb(255, 255, 255);;
+    
+}

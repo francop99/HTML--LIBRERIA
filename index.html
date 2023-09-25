@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inicio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-primary"
+        id="navegador"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">Libreria</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="editorialList.html">editoriales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="autorList.html">Autores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="libroList.html">libros</a>
+              </li>
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="btnNav"
+                >
+                  Registrar
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="AutorForm.html"
+                      >Registrar autor</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Editorial.html"
+                      >Registrar editorial</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="libreria.html"
+                      >Registrar libro</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrar por titulo"
+          aria-label="Username"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                Oferta especial para estudiantes y universitarios 40% off
+              </h5>
+              <p class="card-text">
+                Presentar de forma digital o presencial tu certificado de alumno
+                regular
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                Descuentos 20% off en tu compra llevando +3 libros
+              </h5>
+              <p class="card-text">Hasta 12 cuotas sin interes</p>
+              <p></p>
+
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="book-card"
+        style="background-image: url(imagen1.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">
+            Titulo libro: la verdad sobre la justicia y la democracia
+          </h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(imagen2.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(imagen3.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(imagen4.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(imagen6.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(imagen7.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(imagen8.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div
+        class="book-card"
+        style="background-image: url(descarga.jfif)"
+        th:each="libro : ${libros}"
+      >
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+      <div class="book-card" th:each="libro : ${libros}">
+        <div class="book-details">
+          <h3 th:text="'Titulo: '+ ${libro.titulo}">Titulo libro: x</h3>
+          <p th:text="'Autor: ' + ${libro.autor.nombre}">Autor: x</p>
+          <p th:text="'Editorial: '+  ${libro.editorial.nombre}">
+            Editorial: x
+          </p>
+          <p th:text="'Valor: ' + ${libro.valor}+ '$'">Valor: $11</p>
+          <a class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item enable">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+
+    <footer>
+      <div class="container px-4 py-5" id="custom-cards">
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="background-image: url('fondoFooter1.jfif')"
+            >
+              <div
+                class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+              >
+                <h3
+                  class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"
+                  id="textoFooter"
+                >
+                  Proximo evento de literatura en : Mendoza-Ciudad ARG
+                </h3>
+
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img
+                      src="iconoFooter.png"
+                      alt="Bootstrap"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-white"
+                    />
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <small>Sabado</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <small>23/09/2023</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            >
+              <div
+                class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                id="backgroundFooterMid"
+              >
+                <h3
+                  class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"
+                  id="textoFooter2"
+                >
+                  Sorteos semanales de libros!! Registrate en la pagina y
+                  estaras al tanto de los eventos semanales.
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sucursales en todo el pais</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">libreria@gmail.com</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Realiza tus pedidos</a></li>
+          
+        </ul>
+        <p class="text-center text-body-secondary">&copy; 2023 LibreriaArg</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
